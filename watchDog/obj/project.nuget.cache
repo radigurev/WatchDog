@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JzYAz7Iyi0Uh8Fgizzs4jZxW8iJjVShVK4aFt1jdGZRGx0E7ua9mZfGsxtcXJ41YN34fDihLDCwEx3OcjXjlfw==",
+  "dgSpecHash": "2cERHoMOCJvseWaNy5nuMzhwgzs6LZ4tNUyG9LUrGA7UjZsB+mJVVXTak+1OmmPamWXktFaWnv56vEsFnGeYPw==",
   "success": true,
-  "projectFilePath": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/watchDog/watchDog.csproj",
+  "projectFilePath": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\watchDog\\watchDog.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
