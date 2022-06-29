@@ -6,7 +6,7 @@ HttpClient client = new HttpClient();
 
 var timer = new System.Timers.Timer()
 {
-    Interval = 1 * 60 * 1000
+    Interval = 10 * 60 * 1000
 };
 List<DomainClass> domains = new List<DomainClass> { new DomainClass("https://smcon.com/",false), new DomainClass("https://outlook.live.com",false) };
 
