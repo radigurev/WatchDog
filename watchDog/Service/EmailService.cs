@@ -17,7 +17,7 @@ namespace WatchDog.Service
         const string to = "rg00749943@edu.mon.bg";
 
         const string username = "smc.developer@outlook.com";
-        const string password = "EQu6aD,{m.";
+        const string password = "***********";
 
         const string host = "smtp.office365.com";
         const int port = 587;
