@@ -11,39 +11,34 @@ namespace WatchDog.Service
 
     class EmailService
     {
-        public bool emailForWebsiteDownIsSent;
 
         const string from = "smc.developer@outlook.com";
         const string to = "rg00749943@edu.mon.bg";
 
         const string username = "smc.developer@outlook.com";
-        const string password = "***********";
+        const string password = "EQu6aD,{m.";
 
         const string host = "smtp.office365.com";
         const int port = 587;
 
-        public void SendEmailForDownServer()
+        //readonly SmtpClient EmailClient = new SmtpClient(host, port)
+        //{
+        //    UseDefaultCredentials = false,
+        //    Credentials = new NetworkCredential(username, password),
+        //    EnableSsl = true
+        //};
+
+
+        public void sendEmail(string domain, HttpResponseMessage response,string subject,string body)
         {
-            var EmailClient = new SmtpClient(host, port)
+             var EmailClient = new SmtpClient(host, port)
             {
                 UseDefaultCredentials = false,
                 Credentials = new NetworkCredential(username, password),
                 EnableSsl = true
             };
 
-            EmailClient.Send(from, to, "Test", "Test");
-        }
-
-        public void SendEmailForUpServer()
-        {
-            var EmailClient = new SmtpClient(host, port)
-            {
-                UseDefaultCredentials = false,
-                Credentials = new NetworkCredential(username, password),
-                EnableSsl = true
-            };
-
-            EmailClient.Send(from, to, "Test", "Test");
+            EmailClient.Send(from, to,subject, body);
         }
 
     }
