@@ -16,7 +16,8 @@ namespace WatchDog.Service
         const string to = "Emilian.Saraydarov@smcon.com";
 
         const string username = "smc.developer@outlook.com";
-        const string password = "**********";
+
+        const string password = "*********";
 
         const string host = "smtp.office365.com";
         const int port = 587;
@@ -29,7 +30,7 @@ namespace WatchDog.Service
         //};
 
 
-        public void sendEmail(string domain, HttpResponseMessage response,string subject,string body)
+        public void SendEmail(string domain, HttpResponseMessage response,string subject,string body)
         {
              var EmailClient = new SmtpClient(host, port)
             {

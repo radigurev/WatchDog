@@ -6,7 +6,7 @@ HttpClient client = new HttpClient();
 
 var timer = new System.Timers.Timer()
 {
-    Interval = 10 * 60 * 1000
+    Interval = 1 * 60 * 1000
 };
 List<DomainClass> domains = new List<DomainClass> { new DomainClass("https://smcon.com/",false), new DomainClass("https://outlook.live.com",false) };
 
@@ -20,29 +20,31 @@ timer.Elapsed += Timer_Elapsed;
 //$"{domain} is up again!", $"{domain} is up. \r\n {response}");
 //$"{domain} is down!", $"{domain} is not responding. \r\n HttpRequest: {response}");
 
-async void Timer_Elapsed(object? sender, ElapsedEventArgs e)
+void Timer_Elapsed(object? sender, ElapsedEventArgs e)
 {
     domains.ForEach(async d =>
     {
-        var response = await client.GetAsync(d.domain);
+        var response = await client.GetAsync(d.Domain);
 
         if (!response.IsSuccessStatusCode)
         {
-            if (!d.isWebsiteDown)
+            if (!d.IsWebsiteDown)
             {
-                d.isWebsiteDown = true;
-                email.sendEmail(d.domain, response,$"{d.domain} is down!", $"{d.domain} is not responding. \r\n HttpRequest: {response}");
+                d.IsWebsiteDown = true;
+                email.SendEmail(d.Domain, response,$"{d.Domain} is down!", $"{d.Domain} is not responding. \r\n HttpRequest: {response}");
             }
         }
         else
         {
-            if (d.isWebsiteDown)
+            if (d.IsWebsiteDown)
             {
-                d.isWebsiteDown = false;
-                email.sendEmail(d.domain, response, $"{d.domain} is up again!", $"{d.domain} is up. \r\n {response}");
+                d.IsWebsiteDown = false;
+                email.SendEmail(d.Domain, response, $"{d.Domain} is up again!", $"{d.Domain} is up. \r\n {response}");
             }
         }
     });
 }
+
 timer.Start();
+
 await Task.Delay(-1);
