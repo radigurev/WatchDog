@@ -4,11 +4,12 @@ using watchDog.Entity;
 
 HttpClient client = new HttpClient();
 
+
 var timer = new System.Timers.Timer()
 {
-    Interval = 10 * 60 * 1000
+    Interval = 1 * 10 * 1000
 };
-List<DomainClass> domains = new List<DomainClass> { new DomainClass("https://smcon.com/",false), new DomainClass("https://outlook.live.com",false) };
+List<DomainClass> domains = new List<DomainClass> { new DomainClass("https://smcon.com/",false), new DomainClass("https://outlook.live.com",false), new DomainClass("http://proekt7.eu", false),new DomainClass("http://localhost:8080",false) };
 
 //,new DomainClass("http://proekt7.eu",false) test domain
 
@@ -24,24 +25,36 @@ void Timer_Elapsed(object? sender, ElapsedEventArgs e)
 {
     domains.ForEach(async d =>
     {
-        var response = await client.GetAsync(d.Domain);
-
-        if (!response.IsSuccessStatusCode)
+        try
+        {
+            var response = await client.GetAsync(d.Domain);
+            if (!response.IsSuccessStatusCode)
+            {
+                if (!d.IsWebsiteDown)
+                {
+                    d.IsWebsiteDown = true;
+                    email.SendEmail( $"{d.Domain} is down!", $"{d.Domain} is not responding. \r\n HttpRequest: {response}");
+                }
+            }
+            else
+            {
+                if (d.IsWebsiteDown)
+                {
+                    d.IsWebsiteDown = false;
+                    email.SendEmail( $"{d.Domain} is up again!", $"{d.Domain} is up. \r\n {response}");
+                }
+            }
+        }
+        catch (HttpRequestException e)
         {
             if (!d.IsWebsiteDown)
             {
                 d.IsWebsiteDown = true;
-                email.SendEmail(d.Domain, response,$"{d.Domain} is down!", $"{d.Domain} is not responding. \r\n HttpRequest: {response}");
+                email.SendEmail($"{d.Domain} is down!", $"{d.Domain} is not responding. \r\n Site cannot be reached.");
             }
         }
-        else
-        {
-            if (d.IsWebsiteDown)
-            {
-                d.IsWebsiteDown = false;
-                email.SendEmail(d.Domain, response, $"{d.Domain} is up again!", $"{d.Domain} is up. \r\n {response}");
-            }
-        }
+ 
+       
     });
 }
 
