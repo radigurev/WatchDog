@@ -5,7 +5,7 @@
 @using WatchDogApp.models.Entity
 
 <PageTitle>WatchDog</PageTitle>
-
+@*
         <div class="container">
     <h3 class="p-3 text-center">WatchDog</h3>
     <table class="table table-striped table-bordered">
@@ -19,6 +19,7 @@
         <tbody>
          @foreach (var record in DBService.getAllRecords())
             {
+
                 <tr>
                     <td>@record.Name</td>
                     <td>@record.Status</td>
@@ -30,11 +31,92 @@
 
     <input type="text" @bind="NewDomain"/>
     <button @onclick="@(()=>DBService.addDomain(NewDomain))">Click</button>
-</div>
+</div>*@
+
+   <div class="nav-div">
+       <div onclick="tableClick()" class="wrapper" title="Add book">
+        <span class="fa-stack fa-lg">
+            <i class="fa-solid fa-circle fa-stack-2x"></i>
+            <i id="edit-button" class="fa-solid fa-pen fa-stack-1x fa-inverse"></i>
+          </span>
+       </div>
+    </div>
+
+    <section id="table" class="tablee">
+        <div class="tbl-header">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <thead>
+              <tr>
+                 <th><i class="fa-solid fa-link"></i> Domain</th>
+                <th><i class="fa-solid fa-signal"></i> Status</th>
+                <th><i class="fa-solid fa-calendar"></i> Date</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="tbl-content">
+          <table cellpadding="0" cellspacing="0" border="0">
+            <tbody>
+                  @foreach (var record in DBService.getAllRecords())
+            {
+
+                <tr>
+                    <td>@record.Name</td>
+                    <td>@record.Status</td>
+                    <td>@record.Date</td>
+                </tr>
+            }
+            </tbody>
+          </table>
+        </div>
+      </section>
 
 
+      <section id="add-books" class="add-books">     
+                                  <input type="text" @bind="NewDomain" placeholder="Домейн">    
+                                  <button @onclick="@(() => {DBService.addDomain(NewDomain); ClearInput();})" class="add-button">Add</button>
+                 <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th><i class="fa-solid fa-link"></i> Domain</th>
+          <th><i class="fa-solid fa-signal"></i> Status</th>
+          <th></th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+                @foreach(var domain in DBService.getAllDomains())
+                {
+                    <tr>
+                        <td><a class="link" href="@domain.Name"><i class="fa-solid fa-link"></i>@domain.Name</a></td>
+                        @if (@domain.IsDown)
+                        {
+                            <td>Down</td>
+                        }
+                        else
+                        {
+                            <td>Up</td>
+                        }
+                            <td><button @onclick="(()=>DBService.deleteDomain(domain.Id))" class="remove-button">Remove</button></td>
+        </tr>
+                }
+            </tbody>
+    </table>
+  </div>
+
+      </section>
+   
 
 
 @code {
-    public string NewDomain; 
+    public string NewDomain;
+
+    void ClearInput()
+    {
+        NewDomain = string.Empty;
+    }
 }

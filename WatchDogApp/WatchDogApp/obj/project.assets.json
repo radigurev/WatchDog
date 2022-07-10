@@ -1869,11 +1869,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\radig\\source\\repos\\WatchDogApp\\WatchDogApp\\WatchDogApp.csproj",
+      "projectUniqueName": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\WatchDogApp.csproj",
       "projectName": "WatchDogApp",
-      "projectPath": "C:\\Users\\radig\\source\\repos\\WatchDogApp\\WatchDogApp\\WatchDogApp.csproj",
+      "projectPath": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\WatchDogApp.csproj",
       "packagesPath": "C:\\Users\\radig\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\radig\\source\\repos\\WatchDogApp\\WatchDogApp\\obj\\",
+      "outputPath": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\radig\\AppData\\Roaming\\NuGet\\NuGet.Config",

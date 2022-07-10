@@ -23,7 +23,7 @@ namespace WatchDogApp.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=.;Database=WatchDog;Trusted_Connection=True;");
+                optionsBuilder.UseSqlServer("Server=.;Database=WatchDog;Trusted_Connection=True;MultipleActiveResultSets=True;");
             }
             base.OnConfiguring(optionsBuilder);
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "3Wn2U7+PNiEdze8YUw0jfTo8VXQUix9IWz79jbDhwI0nIpHXxQgXj6bRxb5gKN50aCOIK8tfd0fkusBoPWneLw==",
+  "dgSpecHash": "GIRLtdzbq/STFUl7Qa9med70zVCXKBLWguDLpIjDjjt6LnZC1830QrDpyjMoPP3rMQS0e4XjhteJB2w7zaGlYg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\radig\\source\\repos\\WatchDogApp\\WatchDogApp\\WatchDogApp.csproj",
+  "projectFilePath": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\WatchDogApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\radig\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\radig\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

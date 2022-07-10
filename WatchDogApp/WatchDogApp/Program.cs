@@ -13,7 +13,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<DBService>();
 
-builder.Services.AddDbContext<WatchDogContext>(option => option.UseSqlServer("Server=.;Database=WatchDog;Trusted_Connection=True;"));
+builder.Services.AddDbContext<WatchDogContext>(option => option.UseSqlServer("Server=.;Database=WatchDog;Trusted_Connection=True;MultipleActiveResultSets=True;"));
 
 var app = builder.Build();
 
@@ -28,15 +28,14 @@ using (var serviceScope = app.Services.CreateScope())
 
 var timer = new System.Timers.Timer()
 {
-    Interval = 1 * 10 * 1000
+    Interval = 1 * 60 * 1000
 };
 
-dbService.CheckWebsite();
+timer.Elapsed += Timer_Elapsed;
 
 void Timer_Elapsed(object? sender, ElapsedEventArgs e) 
-{ 
-  
-
+{
+    dbService.CheckWebsite();
 }
 
 timer.Start();
