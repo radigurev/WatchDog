@@ -3,48 +3,27 @@
 @using WatchDogApp.Service
 @using System.Timers;
 @using WatchDogApp.models.Entity
+@using Syncfusion.Blazor
+@using Syncfusion.Blazor.Popups
+@using Syncfusion.Blazor.Grids
+@using Syncfusion.Blazor.Buttons
+@using WatchDogApp.models.View
+
 @inject DBService dbService;
 
-<PageTitle>WatchDog</PageTitle>
-@*
-        <div class="container">
-    <h3 class="p-3 text-center">WatchDog</h3>
-    <table class="table table-striped table-bordered">
-        <thead>
-            <tr>
-                <th>Domain</th>
-                <th>Status</th>
-                <th>Date</th>
-            </tr>
-        </thead>
-        <tbody>
-         @foreach (var record in DBService.getAllRecords())
-            {
 
-                <tr>
-                    <td>@record.Name</td>
-                    <td>@record.Status</td>
-                    <td>@record.Date</td>
-                </tr>
-            }
-        </tbody>
-    </table>
 
-    <input type="text" @bind="NewDomain"/>
-    <button @onclick="@(()=>DBService.addDomain(NewDomain))">Click</button>
-</div>*@
-
-   <div class="nav-div">
-       <div onclick="tableClick()" class="wrapper" title="Add book">
+<div class="nav-div">
+    <div onclick="tableClick()" class="wrapper" title="Add book">
         <span class="fa-stack fa-lg">
             <i class="fa-solid fa-circle fa-stack-2x"></i>
             <i id="edit-button" class="fa-solid fa-pen fa-stack-1x fa-inverse"></i>
-          </span>
-       </div>
+        </span>
     </div>
+</div>
 
-    <section id="table" class="tablee">
-        <div class="tbl-header">
+<section id="table" class="tablee">
+    @*<div class="tbl-header">
           <table cellpadding="0" cellspacing="0" border="0">
             <thead>
               <tr>
@@ -69,52 +48,129 @@
             }
             </tbody>
           </table>
-        </div>
-      </section>
+        </div>*@
+
+    <SfGrid DataSource="dbService.getAllRecords()" EnableHeaderFocus="true" AllowSelection="true" AllowSorting="true" AllowFiltering="true" EnableVirtualization="true" EnableHover="false" Height="600" RowHeight="38">
+        <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
+        <GridPageSettings PageSize="40"></GridPageSettings>
+        <GridColumns>
+            <GridColumn Field=@nameof(TableViewModel.Name) HeaderText="Domain" FilterSettings="@(new FilterSettings { Type = Syncfusion.Blazor.Grids.FilterType.Menu })"></GridColumn>
+            <GridColumn Field=@nameof(TableViewModel.Status) HeaderText="Status" FilterSettings="@(new FilterSettings { Type = Syncfusion.Blazor.Grids.FilterType.Menu })"></GridColumn>
+            <GridColumn Field=@nameof(TableViewModel.Date) HeaderText="Date" FilterSettings="@(new FilterSettings { Type = Syncfusion.Blazor.Grids.FilterType.Menu })"></GridColumn>
+        </GridColumns>
+    </SfGrid>
+
+</section>
 
 
-      <section id="add-books" class="add-books">     
-                                  <input type="text" @bind="NewDomain" placeholder="Домейн">    
-                                  <button @onclick="@(() => {dbService.addDomain(NewDomain); ClearInput();})" class="add-button">Add</button>
-                 <div class="tbl-header">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <thead>
-        <tr>
-          <th><i class="fa-solid fa-link"></i> Domain</th>
-          <th><i class="fa-solid fa-signal"></i> Status</th>
-          <th></th>
-        </tr>
-      </thead>
-    </table>
-  </div>
-  <div class="tbl-content">
-    <table cellpadding="0" cellspacing="0" border="0">
-      <tbody>
-                @foreach(var domain in dbService.getAllDomains())
-                {
+<section id="add-books" class="add-books">
+    <input type="text" @bind="NewDomain" placeholder="Домейн">
+    <button @onclick="@(() => {dbService.addDomain(NewDomain); ClearInput();})" class="add-button">Add</button>
+    @*<div class="tbl-header">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <thead>
                     <tr>
-                        <td><a class="link" href="@domain.Name"><i class="fa-solid fa-link"></i>@domain.Name</a></td>
-                        @if (@domain.IsDown)
+                        <th><i class="fa-solid fa-link"></i> Domain</th>
+                        <th><i class="fa-solid fa-signal"></i> Status</th>
+                        <th></th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="tbl-content">
+            <table cellpadding="0" cellspacing="0" border="0">
+                <tbody>
+                    @foreach (var domain in dbService.getAllDomains())
+                    {
+                        <tr>
+                            <td><a class="link" href="@domain.Name"><i class="fa-solid fa-link"></i>@domain.Name</a></td>
+                            @if (@domain.IsDown)
+                            {
+                                <td>Down</td>
+                            }
+                            else
+                            {
+                                <td>Up</td>
+                            }
+                            <td><button @onclick="(()=>dbService.deleteDomain(domain.Id))" class="remove-button">Remove</button></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>*@
+
+    <SfGrid DataSource="dbService.getAllDomains()" EnableHeaderFocus="true" AllowSelection="true" AllowSorting="true" AllowFiltering="true" EnableVirtualization="true" EnableHover="false" Height="300px">
+        <GridFilterSettings Type="Syncfusion.Blazor.Grids.FilterType.Menu"></GridFilterSettings>
+        <GridPageSettings PageSize="40"></GridPageSettings>
+        <GridColumns>
+            <GridColumn Field=@nameof(Domain.Name) HeaderText="Name" FilterSettings="@(new FilterSettings { Type = Syncfusion.Blazor.Grids.FilterType.Menu })"></GridColumn>
+            <GridColumn Field=@nameof(Domain.IsDown) HeaderText="Status" FilterSettings="@(new FilterSettings { Type = Syncfusion.Blazor.Grids.FilterType.Menu })">
+                <Template>
+                    @{
+                        var isDown = (context as Domain);
+                        @if (!isDown.IsDown)
                         {
-                            <td>Down</td>
+                            <div class="statustemp e-activecolor">
+                                <span class="statustxt e-activecolor">Up</span>
+                            </div>
                         }
                         else
                         {
-                            <td>Up</td>
+                            <div class="statustemp e-inactivecolor">
+                                <span class="statustxt e-inactivecolor">Down</span>
+                            </div>
                         }
-                            <td><button @onclick="(()=>dbService.deleteDomain(domain.Id))" class="remove-button">Remove</button></td>
-        </tr>
-                }
-            </tbody>
-    </table>
-  </div>
+                    }
+                </Template>
+            </GridColumn>
+            <GridColumn HeaderText="">
+                <Template>
+                    @{
+                        var domain = (context as Domain);
 
-      </section>
-   
+                        <SfButton OnClick="@(()=>OnBtnClick(domain.Id))">Edit</SfButton>
+                    }
+                </Template>
+            </GridColumn>
+        </GridColumns>
+    </SfGrid>
+
+    <SfDialog Width="335px" IsModal="true" @bind-Visible="Visibility">
+        <DialogTemplates>
+            <Header> Software Update </Header>
+            <Content>
+                <input @bind="changeDomain"/>
+                <button class="add-button" onclick="@(()=>dbService.editDomain(currentId,changeDomain))">Edit</button>
+                <button class="remove-button" onclick="@(()=>dbService.deleteDomain(currentId))">Remove</button>
+            </Content>
+        </DialogTemplates>
+        <DialogButtons>
+            <DialogButton Content="OK" IsPrimary="true" OnClick="@DlgButtonClick" />
+        </DialogButtons>
+        <DialogAnimationSettings Effect="@DialogEffect.None"></DialogAnimationSettings>
+    </SfDialog>
+
+</section>
+
 
 
 @code {
     public string NewDomain;
+    private string changeDomain;
+    private bool Visibility { get; set; } = false;
+    private int currentId;
+
+    private void OnBtnClick(int id)
+    {
+        this.currentId = id;
+        this.Visibility = true;
+    }
+    private void DlgButtonClick()
+    {
+        this.Visibility = false;
+    }
+
+    public List<TableViewModel> GridData { get; set; }
 
     void ClearInput()
     {

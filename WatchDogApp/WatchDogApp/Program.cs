@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.Timers;
 using WatchDogApp.Data;
 using WatchDogApp.Service;
+using Syncfusion.Blazor;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<DBService>();
 
 builder.Services.AddDbContext<WatchDogContext>(option => option.UseSqlServer("workstation id=WatchDog.mssql.somee.com;packet size=4096;user id=radigurev_SQLLogin_1;pwd=zakvgr8lli;data source=WatchDog.mssql.somee.com;persist security info=False;initial catalog=WatchDog;MultipleActiveResultSets=True;"));
+builder.Services.AddSyncfusionBlazor(options => { options.IgnoreScriptIsolation = true; });
+
 DBService dbService = new DBService();
 
 
@@ -24,6 +27,7 @@ using (var serviceScope = app.Services.CreateScope())
 }
 
 
+Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NjgzNTM3QDMyMzAyZTMyMmUzMExsQjkxMGtXNWhjc2hmNnRuSGRUaVRERXFjeUMvSDdLU3UyVUpIT3p2Zkk9");
 
 
 var timer = new System.Timers.Timer()

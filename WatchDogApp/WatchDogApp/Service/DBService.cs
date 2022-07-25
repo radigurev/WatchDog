@@ -105,5 +105,12 @@ namespace WatchDogApp.Service
             context.domains.Remove(context.domains.Find(id));
             context.SaveChanges();
         }
+
+        public void editDomain(int id,string newDomain)
+        {
+           var domain = context.domains.Find(id);
+            domain.Name = newDomain;
+            context.SaveChanges();
+        }
     }
 }
