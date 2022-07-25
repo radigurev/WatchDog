@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "tsTb0+N2QtD26EB0unHoPZ/CM39aBr8yxUmqGPQoetI=",
+  "Hash": "f3Wr3qmGpXjrbpo7qdiYXHTrlVSqaEJ3CRoOC9J1LTI=",
   "Source": "WatchDogApp",
   "BasePath": "_content/WatchDogApp",
   "Mode": "Default",
@@ -8,19 +8,19 @@
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "WatchDogApp\\wwwroot",
+      "Name": "WatchDogApp/wwwroot",
       "Source": "WatchDogApp",
-      "ContentRoot": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\wwwroot\\",
+      "ContentRoot": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/wwwroot/",
       "BasePath": "_content/WatchDogApp",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\WatchDogApp.styles.css",
+      "Identity": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/obj/Debug/net6.0/scopedcss/bundle/WatchDogApp.styles.css",
       "SourceId": "WatchDogApp",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\",
+      "ContentRoot": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/obj/Debug/net6.0/scopedcss/bundle/",
       "BasePath": "_content/WatchDogApp",
       "RelativePath": "WatchDogApp.styles.css",
       "AssetKind": "All",
@@ -31,13 +31,13 @@
       "AssetTraitValue": "ApplicationBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\obj\\Debug\\net6.0\\scopedcss\\bundle\\WatchDogApp.styles.css"
+      "OriginalItemSpec": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/obj/Debug/net6.0/scopedcss/bundle/WatchDogApp.styles.css"
     },
     {
-      "Identity": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WatchDogApp.bundle.scp.css",
+      "Identity": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/obj/Debug/net6.0/scopedcss/projectbundle/WatchDogApp.bundle.scp.css",
       "SourceId": "WatchDogApp",
       "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\",
+      "ContentRoot": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/obj/Debug/net6.0/scopedcss/projectbundle/",
       "BasePath": "_content/WatchDogApp",
       "RelativePath": "WatchDogApp.bundle.scp.css",
       "AssetKind": "All",
@@ -48,13 +48,13 @@
       "AssetTraitValue": "ProjectBundle",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\WatchDogApp.bundle.scp.css"
+      "OriginalItemSpec": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/obj/Debug/net6.0/scopedcss/projectbundle/WatchDogApp.bundle.scp.css"
     },
     {
-      "Identity": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\wwwroot\\css\\stlye.css",
+      "Identity": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/wwwroot/css/stlye.css",
       "SourceId": "WatchDogApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\wwwroot\\",
+      "ContentRoot": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/wwwroot/",
       "BasePath": "_content/WatchDogApp",
       "RelativePath": "css/stlye.css",
       "AssetKind": "All",
@@ -65,13 +65,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\css\\stlye.css"
+      "OriginalItemSpec": "wwwroot/css/stlye.css"
     },
     {
-      "Identity": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\wwwroot\\favicon.ico",
+      "Identity": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/wwwroot/favicon.ico",
       "SourceId": "WatchDogApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\wwwroot\\",
+      "ContentRoot": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/wwwroot/",
       "BasePath": "_content/WatchDogApp",
       "RelativePath": "favicon.ico",
       "AssetKind": "All",
@@ -82,13 +82,13 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\favicon.ico"
+      "OriginalItemSpec": "wwwroot/favicon.ico"
     },
     {
-      "Identity": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\wwwroot\\js\\script.js",
+      "Identity": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/wwwroot/js/script.js",
       "SourceId": "WatchDogApp",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\wwwroot\\",
+      "ContentRoot": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/wwwroot/",
       "BasePath": "_content/WatchDogApp",
       "RelativePath": "js/script.js",
       "AssetKind": "All",
@@ -99,7 +99,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\script.js"
+      "OriginalItemSpec": "wwwroot/js/script.js"
     }
   ]
 }

@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\WatchDogApp.csproj": {}
+    "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/WatchDogApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\WatchDogApp.csproj": {
+    "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/WatchDogApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\WatchDogApp.csproj",
+        "projectUniqueName": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/WatchDogApp.csproj",
         "projectName": "WatchDogApp",
-        "projectPath": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\WatchDogApp.csproj",
-        "packagesPath": "C:\\Users\\radig\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\radig\\source\\repos\\WatchDog-SM-CONSULTA\\WatchDogApp\\WatchDogApp\\obj\\",
+        "projectPath": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/WatchDogApp.csproj",
+        "packagesPath": "/Users/rado/.nuget/packages/",
+        "outputPath": "/Users/rado/Documents/C#/WatchDog-SM-CONSULTA/WatchDogApp/WatchDogApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\radig\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/rado/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -40,6 +38,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[11.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.6, )"
@@ -53,6 +55,10 @@
               "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.6, )"
+            },
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[8.0.29, )"
             }
           },
           "imports": [
@@ -73,7 +79,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.301/RuntimeIdentifierGraph.json"
         }
       }
     }

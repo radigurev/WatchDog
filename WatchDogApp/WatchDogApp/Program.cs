@@ -1,19 +1,19 @@
-using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Components.Web;
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using System.Timers;
 using WatchDogApp.Data;
-using WatchDogApp.models.Entity;
 using WatchDogApp.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
-DBService dbService = new DBService(); 
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<DBService>();
 
-builder.Services.AddDbContext<WatchDogContext>(option => option.UseSqlServer("Server=.;Database=WatchDog;Trusted_Connection=True;MultipleActiveResultSets=True;"));
+builder.Services.AddDbContext<WatchDogContext>(option => option.UseSqlServer("workstation id=WatchDog.mssql.somee.com;packet size=4096;user id=radigurev_SQLLogin_1;pwd=zakvgr8lli;data source=WatchDog.mssql.somee.com;persist security info=False;initial catalog=WatchDog;MultipleActiveResultSets=True;"));
+DBService dbService = new DBService();
+
+
 
 var app = builder.Build();
 

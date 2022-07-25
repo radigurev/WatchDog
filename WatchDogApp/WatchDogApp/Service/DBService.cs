@@ -9,13 +9,12 @@ namespace WatchDogApp.Service
        static  WatchDogContext context = new WatchDogContext();
         
 
-        public static List<TableViewModel> getAllRecords() 
+        public List<TableViewModel> getAllRecords() 
         {
             List<TableViewModel> responses = new List<TableViewModel>();
             
             foreach(var record in context.histories) {
 
-                Console.WriteLine();
                 TableViewModel model = new TableViewModel()
                 {
                     Name = context.domains.Find(record.DomainId).Name,
@@ -29,7 +28,7 @@ namespace WatchDogApp.Service
             return responses;
         }
 
-        public static List<Domain> getAllDomains() 
+        public List<Domain> getAllDomains() 
         {
             return context.domains.ToList();
         }
@@ -87,7 +86,7 @@ namespace WatchDogApp.Service
             context.Add(history);
         }
 
-        public static void addDomain(string DomainName) {
+        public void addDomain(string DomainName) {
             Domain domain = new Domain()
             {
                 Name=DomainName,
@@ -98,7 +97,7 @@ namespace WatchDogApp.Service
 
         }
 
-        public static void deleteDomain(int id) 
+        public void deleteDomain(int id) 
         {
 
             context.histories.RemoveRange(context.histories.Where(x => x.DomainId == id));

@@ -1,6 +1,4 @@
-﻿
-
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using WatchDogApp.models.Entity;
 
 namespace WatchDogApp.Data
@@ -23,7 +21,7 @@ namespace WatchDogApp.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=.;Database=WatchDog;Trusted_Connection=True;MultipleActiveResultSets=True;");
+                optionsBuilder.UseSqlServer("workstation id=WatchDog.mssql.somee.com;packet size=4096;user id=radigurev_SQLLogin_1;pwd=zakvgr8lli;data source=WatchDog.mssql.somee.com;persist security info=False;initial catalog=WatchDog;MultipleActiveResultSets=True;");
             }
             base.OnConfiguring(optionsBuilder);
         }

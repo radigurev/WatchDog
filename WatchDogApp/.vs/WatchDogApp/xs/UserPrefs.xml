@@ -1,0 +1,42 @@
+﻿<Properties StartupConfiguration="{FD151E29-1FC3-4B54-9634-B1183FBE6850}|Default">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.WatchDogApp PreferredExecutionTarget="/Applications/Safari.app" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="WatchDogApp/Service/DBService.cs">
+    <Files>
+      <File FileName="WatchDogApp/Program.cs" Line="38" Column="9" />
+      <File FileName="WatchDogApp/Data/WatchDogContext.cs" Line="10" Column="6" />
+      <File FileName="WatchDogApp/Service/DBService.cs" Line="25" Column="38" />
+      <File FileName="WatchDogApp/Pages/Index.razor" Line="115" Column="1" />
+      <File FileName="WatchDogApp/Pages/Index.razor.cs" Line="5" Column="40" />
+      <File FileName="WatchDogApp/models/View/TableViewModel.cs" Line="7" Column="43" />
+      <File FileName="WatchDogApp/models/Entity/Domain.cs" Line="1" Column="1" />
+      <File FileName="WatchDogApp/models/Entity/History.cs" Line="16" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WatchDogApp" expanded="True">
+            <Node name="WatchDogApp" expanded="True">
+              <Node name="Data" expanded="True" />
+              <Node name="models" expanded="True">
+                <Node name="Entity" expanded="True" />
+                <Node name="View" expanded="True" />
+              </Node>
+              <Node name="Service" expanded="True">
+                <Node name="DBService.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.Debugger.WatchPad">
+        <State />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+</Properties>

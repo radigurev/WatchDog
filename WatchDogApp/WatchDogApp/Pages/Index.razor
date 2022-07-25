@@ -3,6 +3,7 @@
 @using WatchDogApp.Service
 @using System.Timers;
 @using WatchDogApp.models.Entity
+@inject DBService dbService;
 
 <PageTitle>WatchDog</PageTitle>
 @*
@@ -57,7 +58,7 @@
         <div class="tbl-content">
           <table cellpadding="0" cellspacing="0" border="0">
             <tbody>
-                  @foreach (var record in DBService.getAllRecords())
+                  @foreach (var record in dbService.getAllRecords())
             {
 
                 <tr>
@@ -74,7 +75,7 @@
 
       <section id="add-books" class="add-books">     
                                   <input type="text" @bind="NewDomain" placeholder="Домейн">    
-                                  <button @onclick="@(() => {DBService.addDomain(NewDomain); ClearInput();})" class="add-button">Add</button>
+                                  <button @onclick="@(() => {dbService.addDomain(NewDomain); ClearInput();})" class="add-button">Add</button>
                  <div class="tbl-header">
     <table cellpadding="0" cellspacing="0" border="0">
       <thead>
@@ -89,7 +90,7 @@
   <div class="tbl-content">
     <table cellpadding="0" cellspacing="0" border="0">
       <tbody>
-                @foreach(var domain in DBService.getAllDomains())
+                @foreach(var domain in dbService.getAllDomains())
                 {
                     <tr>
                         <td><a class="link" href="@domain.Name"><i class="fa-solid fa-link"></i>@domain.Name</a></td>
@@ -101,7 +102,7 @@
                         {
                             <td>Up</td>
                         }
-                            <td><button @onclick="(()=>DBService.deleteDomain(domain.Id))" class="remove-button">Remove</button></td>
+                            <td><button @onclick="(()=>dbService.deleteDomain(domain.Id))" class="remove-button">Remove</button></td>
         </tr>
                 }
             </tbody>
